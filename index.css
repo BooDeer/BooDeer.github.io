@@ -59,6 +59,59 @@ a:hover {
 	height: 2px;
 }
 
+nav {
+	font-family: var(--mono);
+	font-size: 80%;
+	padding: 1rem;
+	padding-top: 3rem;
+}
+
+nav h1 a {
+	font-family: var(--sans);
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	/*
+		We remove both of the padding and margin because the identation of the ul element is
+			relative to the browser 
+	*/
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+nav li:first-child {
+	flex-basis: 100%;
+	text-align: center;
+}
+
+nav a {
+	text-decoration: none;
+	color: var(--white);
+	display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover {
+  color: var(--magenta);
+}
+
+nav [class*="fa-"] {
+	font-size: 150%;
+	color: var(--aqua)
+}
+
+nav h1 [class*="fa-"] {
+	font-size: 100%;
+	color: var(--aqua)
+}
+
+
 #intro {
 	padding: 4rem 1rem 10rem 1rem;
 	max-width: 1200px;
@@ -75,6 +128,9 @@ a:hover {
 	font-size: 1rem;
 }
 
+.name span {
+	text-shadow: 0px 0px 0px white, 0 0 1em white, 0 0 1em #b5e853;
+}
 #intro span {
 	font-family: var(--sans);
     font-size: 4rem;
@@ -200,59 +256,6 @@ a:hover {
 	/* padding: 3rem auto ; */
 }
 
-nav {
-	font-family: var(--mono);
-	font-size: 80%;
-	padding: 1rem;
-	padding-top: 3rem;
-}
-
-nav h1 a {
-	font-family: var(--sans);
-	
-}
-
-nav ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	/*
-		We remove both of the padding and margin because the identation
-			relative to the browser 
-	*/
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	gap: 2rem;
-}
-
-nav li:first-child {
-	flex-basis: 100%;
-	text-align: center;
-}
-
-nav a {
-	text-decoration: none;
-	color: var(--white);
-	display: block;
-}
-
-nav a:hover,
-nav [class*="fa-"]:hover {
-  color: var(--magenta);
-}
-
-nav [class*="fa-"] {
-	font-size: 150%;
-	color: var(--aqua)
-}
-
-nav h1 [class*="fa-"] {
-	font-size: 100%;
-	color: var(--aqua)
-}
-
 .button {
 	background-color: var(--magenta);
 	padding: 0.5rem;
@@ -267,7 +270,7 @@ nav h1 [class*="fa-"] {
 	background-color: var(--hotmag);
 }
 
-@media (min-width: 850px) {
+@media (min-width: 1060px) {
 
 	nav {
 		max-width: 1200px;
@@ -309,4 +312,14 @@ footer ul [class*="fa-"] {
 	width: 100%;
 	text-align: center;
 	/* font-size: 75%; */
+}
+
+.tooltip:hover span{
+	display: none;
+}
+
+.tooltip:hover:before {
+	content: "(wip)";
+	opacity: 0.33;
+	color: white;
 }
